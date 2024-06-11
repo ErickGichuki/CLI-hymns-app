@@ -39,10 +39,10 @@ def create_hymn(number, title, lyrics, author_name, key_name):
 
 @cli.command()
 @click.argument('hymn_id', type=int)
-@click.option('__title', type=str, help='New title for the hymn')
-@click.option('__lyrics', type=str, help='New lyrics for the hymn')
-@click.option('__author_name', type=str, help='New author for the hymn')
-@click.option('__key_name', type=str, help='New key for the hymn')
+@click.option('--title', type=str, help='New title for the hymn')
+@click.option('--lyrics', type=str, help='New lyrics for the hymn')
+@click.option('--author_name', type=str, help='New author for the hymn')
+@click.option('--key_name', type=str, help='New key for the hymn')
 def update_hymn(hymn_id, title, lyrics, author_name, key_name):
     """Update an existing hymn."""
     session =SessionLocal()
@@ -72,28 +72,28 @@ def update_hymn(hymn_id, title, lyrics, author_name, key_name):
             click.echo("Sorry!The hymn you want to update is not found!")
             session.close()
     
-    @cli.command()
-    @click.argument('hymn_id', type=int)
-    def delete_hymn(hymn_id):
-        """Delete a hymn"""
-        session = SessionLocal()
-        hymn = session.query(Hymn).filter_by(id=hymn_id).first()
-        if hymn:
-            session.delete(hymn)
-            session.commit()
-            click.echo(f"We're sorry to see that Hymn '{hymn_id}' has been deleted successfully!")
-        else:
-            click.echo('The hymn is not found!')
-        session.close()
+@cli.command()
+@click.argument('hymn_id', type=int)
+def delete_hymn(hymn_id):
+    """Delete a hymn"""
+    session = SessionLocal()
+    hymn = session.query(Hymn).filter_by(id=hymn_id).first()
+    if hymn:
+        session.delete(hymn)
+        session.commit()
+        click.echo(f"We're sorry to see that Hymn '{hymn_id}' has been deleted successfully!")
+    else:
+        click.echo('The hymn is not found!')
+    session.close()
 
-    @cli.command()
-    def list_hymns():
-        """List all hymns."""
-        session = SessionLocal()
-        hymns = session.query(Hymn).all()
-        for hymn in hymns:
-            click.echo(f"{hymn.id}: {hymn.title} by {hymn.author.name} in {hymn.key.name}")
-        session.close()
+@cli.command()
+def list_hymns():
+    """List all hymns."""
+    session = SessionLocal()
+    hymns = session.query(Hymn).all()
+    for hymn in hymns:
+        click.echo(f"{hymn.id}: {hymn.title} by {hymn.author.name} in {hymn.key.name}")
+    session.close()
 
-    if __name__ == "__main__":
+if __name__ == "__main__":
         cli()
