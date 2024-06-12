@@ -1,9 +1,8 @@
 #/usr/bin/env python 3
 import random
+import ipdb
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-import ipdb
-
 
 if __name__ == '__main__':
     engine = create_engine('sqlite:///hymns.db')
