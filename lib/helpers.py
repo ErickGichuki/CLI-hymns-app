@@ -1,5 +1,5 @@
 import click
-from models.database import SessionLocal
+from models.__init__ import SessionLocal
 from models.hymns import Hymn, Author, Key
 
 def exit_program():

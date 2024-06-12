@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
-from .database import Base, SessionLocal
+from .__init__ import Base, SessionLocal
 
 class Hymn(Base):
     __tablename__ = 'hymns'
