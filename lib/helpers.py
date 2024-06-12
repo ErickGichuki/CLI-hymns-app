@@ -7,7 +7,6 @@ def exit_program():
     exit()
 
 def create_hymn(number, title, lyrics, author_name, key_name):
-    """Create a new hymn"""
     session = SessionLocal()
     author = session.query(Author).filter_by(name=author_name).first()
     if not author:
@@ -28,7 +27,6 @@ def create_hymn(number, title, lyrics, author_name, key_name):
     click.echo(f"Hymn '{title} has been added successfully.'")
 
 def update_hymn(hymn_id, title, lyrics, author_name, key_name):
-    """Update an existing hymn."""
     session =SessionLocal()
     hymn = session.query(Hymn).filter_by(id=hymn_id).first()
     if hymn:
@@ -56,7 +54,6 @@ def update_hymn(hymn_id, title, lyrics, author_name, key_name):
             click.echo("Sorry!The hymn you want to update is not found!")
             session.close()
 def delete_hymn(hymn_id):
-    """Delete a hymn"""
     session = SessionLocal()
     hymn = session.query(Hymn).filter_by(id=hymn_id).first()
     if hymn:
@@ -68,7 +65,6 @@ def delete_hymn(hymn_id):
     session.close()
 
 def list_hymns():
-    """List all hymns."""
     session = SessionLocal()
     hymns = session.query(Hymn).all()
     if hymns:
