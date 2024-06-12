@@ -77,3 +77,35 @@ def list_hymns():
     else:
         click.echo("We're sorry we don't have hymns yet.")
     session.close()
+
+def view_lyrics(hymn_id):
+    session = SessionLocal()
+    hymn = session.query(Hymn).filter_by(id=hymn_id).first()
+    if hymn:
+        click.echo(f"Lyrics for {hymn.title}:")
+        click.echo(hymn.lyrics)
+    else:
+        click.echo('Hymn not found')
+    session.close()
+
+def hymns_by_key(key_name):
+    session = SessionLocal()
+    hymns = session.query(Hymn).join(Key).filter(Key.name == key_name).all()
+    if hymns:
+        click.echo(f"Hymns in key {key_name}:")
+        for hymn in hymns:
+            click.echo(f"{hymn.id}: {hymn.title}")
+    else:
+        click.echo(f"No hymns found in key {key_name}")
+    session.close()
+
+def hymns_by_author(author_name):
+    session = SessionLocal()
+    hymns = session.query(Hymn).join(Author).filter(Author.name == author_name).all()
+    if hymns:
+        click.echo(f"Hymns by {author_name}:")
+        for hymn in hymns:
+            click.echo(f"{hymn.id}: {hymn.title}")
+    else:
+        click.echo(f"No hymns found by {author_name}.")
+    session.close()

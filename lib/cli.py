@@ -4,7 +4,10 @@ from helpers import (
     create_hymn, 
     update_hymn,
     delete_hymn,
-    list_hymns
+    list_hymns,
+    view_lyrics,
+    hymns_by_key,
+    hymns_by_author
 )
 
 def menu():
@@ -15,6 +18,9 @@ def menu():
     click.echo("2: Update an existing hymn")
     click.echo("3: Get the list of hymns")
     click.echo("4: Delete a hymn")
+    click.echo("5: View hymn lyrics")
+    click.echo("6: Hymns by key")
+    click.echo("7. Hymns by author")
 
 def main():
     while True:
@@ -33,6 +39,15 @@ def main():
 
         elif choice == "4":
             delete_hymn_input()
+
+        elif choice == "5":
+            view_lyrics_input()
+
+        elif choice == "6":
+            hymns_by_key_input()
+
+        elif choice == "7":
+            hymns_by_author_input()
         
         else:
             click.echo("Oops! Invalid choice.")
@@ -57,5 +72,17 @@ def delete_hymn_input():
     hymn_id = click.prompt("Hymn id", type=int)
     delete_hymn(hymn_id)
 
+def view_lyrics_input():
+    hymn_id = click.prompt("Enter the hymn Id")
+    view_lyrics(hymn_id)
+
+def hymns_by_key_input():
+    key_name = click.prompt("Enter the key")
+    hymns_by_key(key_name)
+
+def hymns_by_author_input():
+    author_name = click.prompt("Author")
+    hymns_by_author(author_name)
+    
 if __name__ == "__main__":
     main()
