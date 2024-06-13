@@ -10,24 +10,15 @@
 #### The user will have to run ```python lib/cli.py``` to start interacting with the app.
 #### A welcome message will be displayed and a menu with the options that the app has for user interaction. <img src="images/welcome.png" alt='welcome'>
 #### These are the 8 options;
-- option 1: When the user wants to create a new hymn. The user will be required to enter the number, title, lyrics, author and the key and the user will get a prompt message printed that the hymn has been added successfully. This how it should look like.
-<img src="images/option1.png" alt="option1">
-- option 2: Updating an existing hymn. It should look this way.
-<img src="images/option2.png" alt="update">
-- option 3: Accessing the list of hymns that are in the app.
-<img src="images/option3.png" alt="listofhymns"> 
-- option 4: Deleting a hymn by Id.
-<img src="images/option4" alt="option4">
-- option 5: Viewing lyrics. When the user wants to view the lyrics of a particular hymn he/she will be required to enter the hymn id.
-<img src="images/option5.png" alt="option5">
-- option 6: Retrieving hymns that have the same key. Lets say a user wants to get hymns by key since a key can have many hymns he/she simply selects option 6 and this how it will look like.
-<img src="images/option6.png" alt="option6">
-- option 7: Accessing hymns that are composed by an author. The user is able to get a list of hymns by a certain Author.
-<img src="images/option7.png" alt="option7">
-- option 8: Exiting. When you are done and wants to leave you should select option 8 and you'll get a goodbye message.
-<img src="images/option8.png" alt="option8">
-#### When the user enters options that are not in the menu he/she will get an error message.
-<img src="images/notoption.png" alt="notoption">
+- option 1: When the user wants to create a new hymn. The user will be required to enter the number, title, lyrics, author and the key and the user will get a prompt message printed that the hymn has been added successfully. This how it should look like.<img src="images/option1.png" alt="option1">
+- option 2: Updating an existing hymn. It should look this way.<img src="images/option2.png" alt="update">
+- option 3: Accessing the list of hymns that are in the app.<img src="images/option3.png" alt="listofhymns"> 
+- option 4: Deleting a hymn by Id.<img src="images/option4.png" alt="option4">
+- option 5: Viewing lyrics. When the user wants to view the lyrics of a particular hymn he/she will be required to enter the hymn id.<img src="images/option5.png" alt="option5">
+- option 6: Retrieving hymns that have the same key. Lets say a user wants to get hymns by key since a key can have many hymns he/she simply selects option 6 and this how it will look like.<img src="images/option6.png" alt="option6">
+- option 7: Accessing hymns that are composed by an author. The user is able to get a list of hymns by a certain Author.<img src="images/option7.png" alt="option7">
+- option 8: Exiting. When you are done and wants to leave you should select option 8 and you'll get a goodbye message.<img src="images/option8.png" alt="option8">
+#### When the user enters options that are not in the menu he/she will get an error message.<img src="images/notoption.png" alt="notoption">
 ## Set Up Instructions
 #### Fork the repository [https://github.com/ErickGichuki/CLI-hymns-app] to get a copy remotely.
 #### Clone the work. Open your terminal and cd to the folder you want to store the work then run git clone SSH Key.
