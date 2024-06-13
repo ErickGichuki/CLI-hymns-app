@@ -11,9 +11,8 @@ from helpers import (
 )
 
 def menu():
-    click.echo("Hi welcome to Eric's hymns management.")
-    click.echo("Select an option: ")
-    click.echo("0: Exit")
+    click.echo("Hi welcome to Eric's hymns app.")
+    click.echo("We are glad to see you here ")
     click.echo("1: Create a new hymn")
     click.echo("2: Update an existing hymn")
     click.echo("3: Get the list of hymns")
@@ -21,15 +20,14 @@ def menu():
     click.echo("5: View hymn lyrics")
     click.echo("6: Hymns by key")
     click.echo("7. Hymns by author")
+    click.echo("8: Exit")
+
 
 def main():
     while True:
         menu()
-        choice = click.prompt(">", type=str)
-        if choice == "0":
-            exit_program()
-        
-        elif choice == "1":
+        choice = click.prompt("Select an option", type=str)
+        if choice == "1":
             create_hymn_input()
 
         elif choice == "2":
@@ -48,6 +46,9 @@ def main():
 
         elif choice == "7":
             hymns_by_author_input()
+
+        elif choice == "8":
+            exit_program()
         
         else:
             click.echo("Oops! Invalid choice.")
