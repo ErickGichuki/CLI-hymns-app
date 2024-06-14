@@ -1,10 +1,10 @@
 # Hymns CLI App
 
 ## Description
-- Welcome to the Hymns CLI App! This application allows users to seamlessly interact with a command-line interface built with Click. The app features three main models classes: Hymn, Author, and Key.
-*** Hymn ***: It has a number, title, lyrics, the name of the author and the key.
-*** Author ***: An author can have many hymns which is a one to many relationship.
-*** Key ***: Each key can have many hymns which also a one to many relationship.
+#### Welcome to the Hymns CLI App! This application allows users to seamlessly interact with a command-line interface built with Click. The app features three main models classes: Hymn, Author, and Key.
+1. Hymn: It has a number, title, lyrics, the name of the author and the key.
+2. Author: An author can have many hymns which is a one to many relationship.
+3. Key: Each key can have many hymns which also a one to many relationship.
 - To start interacting with the app you'll need to run ```python lib/cli.py```.
 - You'll be greeted with a welcome message and a menu with 8 options <img src="images/welcome.png" alt='welcome'>
 - These are the 8 options;
@@ -16,7 +16,7 @@
 6. Retrieve hymns by key: The user may need to know which hymns share the same key he/she will select this option and will be required to enter the key.<img src="images/option6.png" alt="option6">
 7. List of hymns by author: view hymns that are composed by an author. The user is able to get a list of hymns by a specific Author.<img src="images/option7.png" alt="option7">
 8. Exit: When the user is done and wants to leave he/she should select option 8 and you'll be able to exit with a goodbye message.<img src="images/option8.png" alt="option8">
-- If an invalid choice is entered, an error message will be displayed.<img src="images/notoption.png" alt="notoption">
+- If an invalid choice is entered, an error message will be displayed.<img src="images/notoption.png.png" alt="notoption">
 
 ## Set Up Instructions
 1. Fork the repository: https://github.com/ErickGichuki/CLI-hymns-app to get a copy remotely.
